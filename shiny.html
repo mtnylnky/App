@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>R Freamworkleri</title>
+  <meta name="description" content="Bu materyal R ile ilgili olan freamworklerin nasıl çalıştığına dair yetersiz Türkçe kaynaklara çözüm olması için konuların genel ve temel olarak aktarılmaya çalışılmıştır.">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="R Freamworkleri" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Bu materyal R ile ilgili olan freamworklerin nasıl çalıştığına dair yetersiz Türkçe kaynaklara çözüm olması için konuların genel ve temel olarak aktarılmaya çalışılmıştır." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="R Freamworkleri" />
+  
+  <meta name="twitter:description" content="Bu materyal R ile ilgili olan freamworklerin nasıl çalıştığına dair yetersiz Türkçe kaynaklara çözüm olması için konuların genel ve temel olarak aktarılmaya çalışılmıştır." />
+  
+
+<meta name="author" content="Metin YALÇINKAYA">
+
+
+<meta name="date" content="2018-01-01">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="intro.html">
+<link rel="next" href="swirl.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R Freamworkleri</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Giriş</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#tantm"><i class="fa fa-check"></i><b>1.1</b> Tanıtım</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#gereklilikler"><i class="fa fa-check"></i><b>1.2</b> Gereklilikler</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Bookdown</a><ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#gereklilikler-1"><i class="fa fa-check"></i><b>2.1</b> Gereklilikler</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#baslangc"><i class="fa fa-check"></i><b>2.2</b> Başlangıç</a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#duzenleme"><i class="fa fa-check"></i><b>2.3</b> Düzenleme</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="intro.html"><a href="intro.html#baslk"><i class="fa fa-check"></i><b>2.3.1</b> Başlık</a></li>
+<li class="chapter" data-level="2.3.2" data-path="intro.html"><a href="intro.html#link"><i class="fa fa-check"></i><b>2.3.2</b> Link</a></li>
+<li class="chapter" data-level="2.3.3" data-path="intro.html"><a href="intro.html#liste"><i class="fa fa-check"></i><b>2.3.3</b> Liste</a></li>
+<li class="chapter" data-level="2.3.4" data-path="intro.html"><a href="intro.html#kod-ekleme-renklendirme"><i class="fa fa-check"></i><b>2.3.4</b> Kod Ekleme &amp; Renklendirme</a></li>
+<li class="chapter" data-level="2.3.5" data-path="intro.html"><a href="intro.html#tablo"><i class="fa fa-check"></i><b>2.3.5</b> Tablo</a></li>
+<li class="chapter" data-level="2.3.6" data-path="intro.html"><a href="intro.html#resim"><i class="fa fa-check"></i><b>2.3.6</b> Resim</a></li>
+<li class="chapter" data-level="2.3.7" data-path="intro.html"><a href="intro.html#daha-fazlas"><i class="fa fa-check"></i><b>2.3.7</b> Daha Fazlası</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#onizleme-ve-ckt-alma"><i class="fa fa-check"></i><b>2.4</b> Önizleme ve Çıktı Alma</a></li>
+<li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#onemli-nokta"><i class="fa fa-check"></i><b>2.5</b> Önemli Nokta!</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="shiny.html"><a href="shiny.html"><i class="fa fa-check"></i><b>3</b> Shiny</a><ul>
+<li class="chapter" data-level="3.1" data-path="shiny.html"><a href="shiny.html#gereklilikler-2"><i class="fa fa-check"></i><b>3.1</b> Gereklilikler</a></li>
+<li class="chapter" data-level="3.2" data-path="shiny.html"><a href="shiny.html#baslangc-1"><i class="fa fa-check"></i><b>3.2</b> Başlangıç</a></li>
+<li class="chapter" data-level="3.3" data-path="shiny.html"><a href="shiny.html#duzenleme-1"><i class="fa fa-check"></i><b>3.3</b> Düzenleme</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="shiny.html"><a href="shiny.html#ui"><i class="fa fa-check"></i><b>3.3.1</b> Ui</a></li>
+<li class="chapter" data-level="3.3.2" data-path="shiny.html"><a href="shiny.html#server"><i class="fa fa-check"></i><b>3.3.2</b> Server</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="shiny.html"><a href="shiny.html#yaynlama"><i class="fa fa-check"></i><b>3.4</b> Yayınlama</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="swirl.html"><a href="swirl.html"><i class="fa fa-check"></i><b>4</b> Swirl</a><ul>
+<li class="chapter" data-level="4.1" data-path="swirl.html"><a href="swirl.html#gereklilikler-3"><i class="fa fa-check"></i><b>4.1</b> Gereklilikler</a></li>
+<li class="chapter" data-level="4.2" data-path="swirl.html"><a href="swirl.html#baslangc-2"><i class="fa fa-check"></i><b>4.2</b> Başlangıç</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="swirl.html"><a href="swirl.html#dersi-ogrenmek-icin"><i class="fa fa-check"></i><b>4.2.1</b> Dersi Öğrenmek İçin</a></li>
+<li class="chapter" data-level="4.2.2" data-path="swirl.html"><a href="swirl.html#ders-olusturmak-icin"><i class="fa fa-check"></i><b>4.2.2</b> Ders Oluşturmak İçin</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="swirl.html"><a href="swirl.html#duzenleme-2"><i class="fa fa-check"></i><b>4.3</b> Düzenleme</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="swirl.html"><a href="swirl.html#dersi-ogrenmek-icin-1"><i class="fa fa-check"></i><b>4.3.1</b> Dersi Öğrenmek İçin</a></li>
+<li class="chapter" data-level="4.3.2" data-path="swirl.html"><a href="swirl.html#dersi-olusturmak-icin"><i class="fa fa-check"></i><b>4.3.2</b> Dersi Oluşturmak İçin</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="swirl.html"><a href="swirl.html#yaynlama-1"><i class="fa fa-check"></i><b>4.4</b> Yayınlama</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="rwebsite.html"><a href="rwebsite.html"><i class="fa fa-check"></i><b>5</b> RWebsite</a><ul>
+<li class="chapter" data-level="5.1" data-path="rwebsite.html"><a href="rwebsite.html#gereklilikler-4"><i class="fa fa-check"></i><b>5.1</b> Gereklilikler</a></li>
+<li class="chapter" data-level="5.2" data-path="rwebsite.html"><a href="rwebsite.html#baslangc-3"><i class="fa fa-check"></i><b>5.2</b> Başlangıç</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="rwebsite.html"><a href="rwebsite.html#website"><i class="fa fa-check"></i><b>5.2.1</b> Website</a></li>
+<li class="chapter" data-level="5.2.2" data-path="rwebsite.html"><a href="rwebsite.html#blog"><i class="fa fa-check"></i><b>5.2.2</b> Blog</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="rwebsite.html"><a href="rwebsite.html#duzenleme-3"><i class="fa fa-check"></i><b>5.3</b> Düzenleme</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="rwebsite.html"><a href="rwebsite.html#website-1"><i class="fa fa-check"></i><b>5.3.1</b> Website</a></li>
+<li class="chapter" data-level="5.3.2" data-path="rwebsite.html"><a href="rwebsite.html#blog-1"><i class="fa fa-check"></i><b>5.3.2</b> Blog</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="rwebsite.html"><a href="rwebsite.html#ckt"><i class="fa fa-check"></i><b>5.4</b> Çıktı</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="rwebsite.html"><a href="rwebsite.html#website-2"><i class="fa fa-check"></i><b>5.4.1</b> Website</a></li>
+<li class="chapter" data-level="5.4.2" data-path="rwebsite.html"><a href="rwebsite.html#blog-2"><i class="fa fa-check"></i><b>5.4.2</b> Blog</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R Freamworkleri</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="shiny" class="section level1">
+<h1><span class="header-section-number">3</span> Shiny</h1>
+<p>Shiny etkileşimli web sayfalarını oluşturmanıza olanak sağlayan RStudio paketidir. R kullanıcılarının yöneliktir ve html,css,js bilmenize gerek yoktur.<br />
+Shiny ile oldukça fazla şey yapabilirsiniz: etkileşimli bir web sayfası yapmanın kolay bir yolu olarak düşünün ve bu web sayfası R ile sorunsuz bir şekilde etkileşime girebilir ve R nesnelerini (R’de yaptığınız her şeyin grafikleri, tabloları) gösterebilir.</p>
+<div id="gereklilikler-2" class="section level2">
+<h2><span class="header-section-number">3.1</span> Gereklilikler</h2>
+<p>Shiny kullanabilmek için aşağıdaki paketi öncelikle yüklemelisiniz.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;shiny&quot;</span>)</code></pre></div>
+<p>Ayrıca uygulama için kullanabileceğimiz veri setini <a href="https://deanattali.com/files/bcl-data.csv">buradan</a> indirelim.</p>
+</div>
+<div id="baslangc-1" class="section level2">
+<h2><span class="header-section-number">3.2</span> Başlangıç</h2>
+<p>Shiny uygulamaları iki bölümden oluşur. Bir bölümde kullanıcının etkileşime girdiği web sayfası birde uygulamaya güç veren bir sunucu tarafı olarak uygulamayı yazmanız gerekiyor. Kullanıcı arayüzü, kullanıcının göreceği bir web dokümanıdır, Shiny’in işlevlerini kullanarak yazdığınız HTML’dir. Kullanıcı Arayüzü, uygulamanın düzenini oluşturup tüm şeylerin nereye gittiğini tam olarak söylemekle sorumludur. Sunucu, uygulamanın mantığından sorumludur; Kullanıcı, sayfayla etkileşimde bulunduğunda ne göstereceğini web sayfasına bildiren talimatlar kümesidir.</p>
+<p>Şimdi bir shiny uygulaması oluşturalım; ilk olarak shiny uygulamanızı ister tek dosya halinde ister ui,server olarak iki dosya halinde hazırlayabilirsiniz. Tek dosya halinde oluşturmak için RStudio üzerinde oluşturduğunuz yeni dosya içerisine;</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(shiny)
+ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>()
+server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output) {}
+<span class="kw">shinyApp</span>(<span class="dt">ui =</span> ui, <span class="dt">server =</span> server)</code></pre></div>
+<p>kodları girerek shiny uygulamızın temel kodlarınız yazıyoruz.<em>Bu noktada önemli olan eğer uygulama tek dosyada yer alacaksa adı <strong>app.R</strong> olmalıdır.</em> Bu işlemleri yaptık şimdi sıra kodu test etme aşaması var. Bunun için Rstudio üzerindeki <strong>Run App</strong> butonuna tıklayarak uygulamanızın çalışıp çalışmadığını test edebilirsiniz. <img src="resim5.png" /></p>
+<p>şeklinde bir yan pencere açılcaktır ve konsol kısmında <span style="color:red">Listening on <a href="http://127.0.0.1:3321" class="uri">http://127.0.0.1:3321</a></span> gibi bir metin yer alıyorsa uygulamanız şuanda hiçbir problem yaşamadan çalışıyor demektir.</p>
+</div>
+<div id="duzenleme-1" class="section level2">
+<h2><span class="header-section-number">3.3</span> Düzenleme</h2>
+<div id="ui" class="section level3">
+<h3><span class="header-section-number">3.3.1</span> Ui</h3>
+<div id="baslk-1" class="section level4">
+<h4><span class="header-section-number">3.3.1.1</span> Başlık</h4>
+<p>Uygulamaya h1() ile bir başlık ekleyebiliriz, ancak Shiny ayrıca özel bir işlevi olan titlePanel() özelliğine de sahiptir. TitlePanel() işlevini kullanmak, sayfanın üst kısmına görünür büyük başlık benzeri bir metin eklemekle kalmaz, aynı zamanda web sayfasının “resmi” başlığını da ayarlar. Bu, tarayıcıdaki sekmenin ismine baktığınızda, bu başlığı göreceğiniz anlamına gelir. Şimdiye kadar denediğiniz fluidPage() ’ın üzerine yazıp, basit bir başlık ile değiştirin.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fluidPage</span>(
+  <span class="kw">titlePanel</span>(<span class="st">&quot;R Freamworkleri&quot;</span>)
+)</code></pre></div>
+</div>
+<div id="sayfa-duzeni" class="section level4">
+<h4><span class="header-section-number">3.3.1.2</span> Sayfa Düzeni</h4>
+<p>Şimdiye kadar sadece metin ve HTML etiketlerini ekleyerek, her şeyin yapılandırılmamış olduğunu ve öğelerin tek bir sütunda birbirinin altına yığıldığını fark etmişsinizdir. Basit bir yapı eklemek için sidebarLayout() yöntemini kullanacağız. Daha küçük bir kenar çubuğu ve daha büyük bir ana paneli ile basit bir iki sütun düzeni sağlar. Uygulamamızı, kullanıcının kullanabileceği tüm girişlerin kenar çubuğunda olacak ve sonuçları sağdaki ana panelde gösterilecek şekilde oluşturacağız.</p>
+<p>titlePanel() kodundan sonra aşağıdaki kodu ekleyiniz.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sidebarLayout</span>(
+  <span class="kw">sidebarPanel</span>(<span class="st">&quot;Burada girdiler yer alacak&quot;</span>),
+  <span class="kw">mainPanel</span>(<span class="st">&quot;Çıktılar bu tarafta olacak&quot;</span>)
+)</code></pre></div>
+<p>fluidPage() etiketi içerisindeki komutlar birbirinden virgül yardımı ile ayrılır.</p>
+<p>Bu ana kadar yazdığımız kodlar şöyle oluyor;</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(shiny)
+bcl &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;sizin_verisetiniz.csv&quot;</span>, <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)
+
+ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(
+  <span class="kw">titlePanel</span>(<span class="st">&quot;R Freamworkleri&quot;</span>),
+  <span class="kw">sidebarLayout</span>(
+    <span class="kw">sidebarPanel</span>(<span class="st">&quot;Burada girdiler yer alacak&quot;</span>),
+    <span class="kw">mainPanel</span>(<span class="st">&quot;Çıktılar bu tarafta olacak&quot;</span>)
+  )
+)
+
+server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output) {}
+
+<span class="kw">shinyApp</span>(<span class="dt">ui =</span> ui, <span class="dt">server =</span> server)</code></pre></div>
+</div>
+<div id="girdiler" class="section level4">
+<h4><span class="header-section-number">3.3.1.3</span> Girdiler</h4>
+<p>Girişler, kullanıcıların Shiny ile etkileşim kurmanın bir yoludur. Shiny, kullanıcının bir uygulama ile sahip olabileceği birçok türde etkileşimi desteklemek için birçok girdi işlevi sağlar.</p>
+<p>textInput() kullanıcının metin girmesine izin vermek için kullanılır, numericInput() kullanıcının bir sayı seçmesine izin verir, dateInput() bir tarih seçmek içindir, selectInput() bir seçim kutusu (bir açılır menü) oluşturmak içindir.</p>
+<div id="sliderinput" class="section level5">
+<h5><span class="header-section-number">3.3.1.3.1</span> SliderInput()</h5>
+<p>Bir fiyat aralığında sayı girilmesine sağlayalım. Bunun için sliderInput() ve numericInput() kullanabiliriz. Eğer numericInput kullanırsak en az iki giriş kullanmamız gerekecek sınırlama için fakat sliderInput ile bir aralık belirleyebileceğimiz için sliderInput kullanacağız.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sliderInput</span>(<span class="st">&quot;fiyatGirdisi&quot;</span>, <span class="st">&quot;Fiyat&quot;</span>, <span class="dt">min =</span> <span class="dv">0</span>, <span class="dt">max =</span> <span class="dv">100</span>,
+            <span class="dt">value =</span> <span class="kw">c</span>(<span class="dv">25</span>, <span class="dv">40</span>), <span class="dt">pre =</span> <span class="st">&quot;₺&quot;</span>)</code></pre></div>
+<p>value değeri içerisinde default veriyi belirliyoruz ayrıca burada bir fiyat aralığı olduğu için iki tane veri belirlememiz gerekiyor.</p>
+</div>
+<div id="radiobuttons" class="section level5">
+<h5><span class="header-section-number">3.3.1.3.2</span> RadioButtons()</h5>
+<p>radioButtons() için bir çeşit metin girişi istiyoruz. Ancak kullanıcının özgürce metin girmesine izin vermek istemiyoruz çünkü kullanıcıyı sadece birkaç seçenek ile sınırlamak istiyoruz. Amacımız için radyo düğmelerini veya bir seçim kutusunu kullanabiliriz. Şimdi sadece birkaç seçenek olduğundan radyo düğmeleri kullanalım, bu yüzden radioButtons() kullanımına bakalım;</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">radioButtons</span>(<span class="st">&quot;tipGirisi&quot;</span>, <span class="st">&quot;Hangisi&quot;</span>,
+            <span class="dt">choices =</span> <span class="kw">c</span>(<span class="st">&quot;Tür 1&quot;</span>, <span class="st">&quot;Tür 2&quot;</span>, <span class="st">&quot;Tür 3&quot;</span>, <span class="st">&quot;Tür 4&quot;</span>),
+            <span class="dt">selected =</span> <span class="st">&quot;Tür 4&quot;</span>)</code></pre></div>
+<p>bu kodları sidebarPanel() kodu içerisine ekliyoruz. Ayrıca virgül ile ayrımayı unutmamız gerekiyor.</p>
+</div>
+<div id="selectinput" class="section level5">
+<h5><span class="header-section-number">3.3.1.3.3</span> SelectInput()</h5>
+<p>selectInput() varsayalım bir sehir seçtimek istiyoruz bu durumda en uygun giriş tipi muhtemelen seçim kutusudur. SelectInput() ile bir giriş işlevi oluşturalım. Şimdilik sadece Ankara, Istanbul, Izmir ve Bursa gibi seçenekler sunalım;</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">selectInput</span>(<span class="st">&quot;sehirSecimi&quot;</span>, <span class="st">&quot;Sehirler&quot;</span>,
+            <span class="dt">choices =</span> <span class="kw">c</span>(<span class="st">&quot;Ankara&quot;</span>, <span class="st">&quot;Bursa&quot;</span>, <span class="st">&quot;Istanbul&quot;</span>,<span class="st">&quot;Izmir&quot;</span>))</code></pre></div>
+</div>
+<div id="daha-fazlas-1" class="section level5">
+<h5><span class="header-section-number">3.3.1.3.4</span> Daha Fazlası</h5>
+<p>Yukarıdakilerden daha fazla widget ihtiyacınız olursa <a href="https://shiny.rstudio.com/tutorial/written-tutorial/lesson3/">buradan</a> ve <a href="https://shiny.rstudio.com/tutorial/written-tutorial/lesson4/">buradaki</a> ingilizce kaynaktan yararlanabilirsiniz.</p>
+</div>
+</div>
+</div>
+<div id="server" class="section level3">
+<h3><span class="header-section-number">3.3.2</span> Server</h3>
+<p>Bu alanda daha çok düzenleme dışında ne yapacağımızla ilgileneceğiz yani seçilen parametre sonucunda uygulmayı nası çalıştıracağımızı inceleyeceğiz.</p>
+<p>Öncelikle aşağıdaki koda bakalım;</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">output<span class="op">$</span>coolplot &lt;-<span class="st"> </span><span class="kw">renderPlot</span>({
+  <span class="kw">plot</span>(<span class="kw">rnorm</span>(<span class="dv">100</span>))
+})</code></pre></div>
+<p>Bu basit kod ilk iki kuralı gösterir: renderPlot() işlevinin içinde bir çizim oluşturuyoruz ve çıktı listesindeki coolplot’a atıyoruz. Coolplot bir plotOutput olarak tanımlandığından, renderPlot işlevini kullanmalıyız ve renderPlot işlevinin içinde bir çizim oluşturmalıyız. Yukarıdaki kodu sunucu işlevinin içine eklerseniz, uygulamada 100 rastgele nokta içeren bir alan görmelisiniz.</p>
+<p>Şimdi ggplot kullanarak bir görselleştirme yapalım. Hem değerlerimiz arasında değişiklik yaptığımızda hem de filtreleme işlemini kullanacağımız ayrıca ggplot ile görselleştirme yapacağımız için uygulamamızın en üstüne aşağıdaki kütüphaneleri ekleyelim;</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
+<span class="kw">library</span>(dplyr)</code></pre></div>
+<p><strong>Not:</strong> Eğer hata alıyorsanız paketlerin sisteminizde kurulu olup olmadığına bakınız.</p>
+<p>dplyr kütüphanesini filtreleme işlemleri için aktifleştirdik. Şimdi gelelim seçimler ile kullanıcı arayüzünde değişiklikler sağlamaya;</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">output<span class="op">$</span>coolplot &lt;-<span class="st"> </span><span class="kw">renderPlot</span>({
+  filtered &lt;-
+<span class="st">    </span>verisetiniz <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">filter</span>(Fiyat <span class="op">&gt;=</span><span class="st"> </span>input<span class="op">$</span>fiyatGirdisi[<span class="dv">1</span>],
+           Fiyat <span class="op">&lt;=</span><span class="st"> </span>input<span class="op">$</span>fiyatGirdisi[<span class="dv">2</span>],
+           Hangisi <span class="op">==</span><span class="st"> </span>input<span class="op">$</span>tipGirisi,
+           Sehirler <span class="op">==</span><span class="st"> </span>input<span class="op">$</span>sehirSecimi
+    )
+  <span class="kw">ggplot</span>(filtered, <span class="kw">aes</span>(veriseti_icindekialan)) <span class="op">+</span>
+<span class="st">    </span><span class="kw">geom_histogram</span>()
+})<span class="er">)</span></code></pre></div>
+<p>Yukarıdaki kod bloğu içerisinde filtered diye bir alan oluşturduk ve seçimlerimizi bu değişkende topladık. “verisetiniz” yazan alan eğer uygulamaya bir veri seti eklerseniz bu alana ekleyeceğiniz anlamına gelir. (Verisetini burada değil kodun üst kısımlarında tanımlayıp sadece atadığınız değişken adını yazmanız gerekir.) ggplot içerisinde ise değişkenlerimiz ile beraber varsa verisetine ait alan ile birleştirilip bir görsel oluşturulur. Bu kodlar ile beraber kullanıcıya interaktif bir web uygulaması kullanması sağlanmış olur.</p>
+<div id="genel-baks" class="section level4">
+<h4><span class="header-section-number">3.3.2.1</span> Genel Bakış</h4>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(shiny)
+<span class="kw">library</span>(ggplot2)
+<span class="kw">library</span>(dplyr)
+
+bcl &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;bcl-data.csv&quot;</span>, <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)
+
+ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(
+  <span class="kw">titlePanel</span>(<span class="st">&quot;R Freamworkleri&quot;</span>),
+  <span class="kw">sidebarLayout</span>(
+    <span class="kw">sidebarPanel</span>(
+      <span class="kw">sliderInput</span>(<span class="st">&quot;fiyatGirdisi&quot;</span>, <span class="st">&quot;Fiyat&quot;</span>, <span class="dt">min =</span> <span class="dv">0</span>, <span class="dt">max =</span> <span class="dv">100</span>,
+            <span class="dt">value =</span> <span class="kw">c</span>(<span class="dv">25</span>, <span class="dv">40</span>), <span class="dt">pre =</span> <span class="st">&quot;₺&quot;</span>),
+      <span class="kw">radioButtons</span>(<span class="st">&quot;tipGirisi&quot;</span>, <span class="st">&quot;Hangisi&quot;</span>,
+            <span class="dt">choices =</span> <span class="kw">c</span>(<span class="st">&quot;Tür 1&quot;</span>, <span class="st">&quot;Tür 2&quot;</span>, <span class="st">&quot;Tür 3&quot;</span>, <span class="st">&quot;Tür 4&quot;</span>),
+            <span class="dt">selected =</span> <span class="st">&quot;Tür 4&quot;</span>),
+      <span class="kw">selectInput</span>(<span class="st">&quot;sehirSecimi&quot;</span>, <span class="st">&quot;Sehirler&quot;</span>,
+            <span class="dt">choices =</span> <span class="kw">c</span>(<span class="st">&quot;Ankara&quot;</span>, <span class="st">&quot;Bursa&quot;</span>, <span class="st">&quot;Istanbul&quot;</span>,<span class="st">&quot;Izmir&quot;</span>))
+    ),
+    <span class="kw">mainPanel</span>(
+      <span class="kw">plotOutput</span>(<span class="st">&quot;coolplot&quot;</span>),
+      <span class="kw">br</span>(), <span class="kw">br</span>(),
+      <span class="kw">tableOutput</span>(<span class="st">&quot;results&quot;</span>)
+    )
+  )
+)
+
+server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output) {
+  output<span class="op">$</span>coolplot &lt;-<span class="st"> </span><span class="kw">renderPlot</span>({
+  filtered &lt;-
+<span class="st">    </span>verisetiniz <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">filter</span>(Fiyat <span class="op">&gt;=</span><span class="st"> </span>input<span class="op">$</span>fiyatGirdisi[<span class="dv">1</span>],
+           Fiyat <span class="op">&lt;=</span><span class="st"> </span>input<span class="op">$</span>fiyatGirdisi[<span class="dv">2</span>],
+           Hangisi <span class="op">==</span><span class="st"> </span>input<span class="op">$</span>tipGirisi,
+           Sehirler <span class="op">==</span><span class="st"> </span>input<span class="op">$</span>sehirSecimi
+    )
+  <span class="kw">ggplot</span>(filtered, <span class="kw">aes</span>(veriseti_icindekialan)) <span class="op">+</span>
+<span class="st">    </span><span class="kw">geom_histogram</span>()
+}
+
+<span class="kw">shinyApp</span>(<span class="dt">ui =</span> ui, <span class="dt">server =</span> server)</code></pre></div>
+<p>Aşağıdaki resimde yukarıdaki kodun çalıştırılmış halini inceleyelim.</p>
+<div class="figure">
+<img src="resim6.png" />
+
+</div>
+<p>Bu resimde bir veri setimiz olmadığı için uygulama hata veriyor bir veri seti ekleyip tekrar deneyelim; <img src="resim7.png" /></p>
+<p>görüldüğü üzere uygulamamız çalışıyor.</p>
+</div>
+</div>
+</div>
+<div id="yaynlama" class="section level2">
+<h2><span class="header-section-number">3.4</span> Yayınlama</h2>
+<p>Uygulamanızı hazırladınız ve web üzerinde yayınlamanız gerekiyor işte bu noktada <a href="http://www.shinyapps.io/">shinyapps.io</a> size belli bir sayıya kadar barındırma hizmeti sunar. RStudio entegre olan bu hizmet size uygulamanız ile ilgili istatislikler verir.</p>
+<p>Öncelikle Uygulamanızı shinyapps.io üzerinde barındırma uygulaması, uygulamanızı çevrimiçi hale getirmenin kolay ve önerilen yoludur. <a href="http://www.shinyapps.io/">shinyapps.io</a> adresine gidin ve yeni bir hesap için kaydolun. Uygulamanızı yayınlamaya hazır olduğunuzda, RStudio’daki “Publish Application” düğmesini tıklayın ve talimatlarını uygulayın. İlk kez bir çift paket yüklemeniz istenebilir. Shinyapps.io’ya başarılı bir yüklemeden sonra, uygulamanıza tarayıcıda yönlendirileceksiniz. Bu URL’yi çevrenize göstermek için yazdığınız harika bir uygulama olarak kullanabilirsiniz.</p>
+<div class="figure">
+<img src="resim8.png" />
+
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="swirl.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-literature.Rmd",
+"text": "Edit"
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

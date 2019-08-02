@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>R Freamworkleri</title>
+  <meta name="description" content="Bu materyal R ile ilgili olan freamworklerin nasıl çalıştığına dair yetersiz Türkçe kaynaklara çözüm olması için konuların genel ve temel olarak aktarılmaya çalışılmıştır.">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="R Freamworkleri" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Bu materyal R ile ilgili olan freamworklerin nasıl çalıştığına dair yetersiz Türkçe kaynaklara çözüm olması için konuların genel ve temel olarak aktarılmaya çalışılmıştır." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="R Freamworkleri" />
+  
+  <meta name="twitter:description" content="Bu materyal R ile ilgili olan freamworklerin nasıl çalıştığına dair yetersiz Türkçe kaynaklara çözüm olması için konuların genel ve temel olarak aktarılmaya çalışılmıştır." />
+  
+
+<meta name="author" content="Metin YALÇINKAYA">
+
+
+<meta name="date" content="2018-01-01">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="swirl.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R Freamworkleri</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Giriş</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#tantm"><i class="fa fa-check"></i><b>1.1</b> Tanıtım</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#gereklilikler"><i class="fa fa-check"></i><b>1.2</b> Gereklilikler</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Bookdown</a><ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#gereklilikler-1"><i class="fa fa-check"></i><b>2.1</b> Gereklilikler</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#baslangc"><i class="fa fa-check"></i><b>2.2</b> Başlangıç</a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#duzenleme"><i class="fa fa-check"></i><b>2.3</b> Düzenleme</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="intro.html"><a href="intro.html#baslk"><i class="fa fa-check"></i><b>2.3.1</b> Başlık</a></li>
+<li class="chapter" data-level="2.3.2" data-path="intro.html"><a href="intro.html#link"><i class="fa fa-check"></i><b>2.3.2</b> Link</a></li>
+<li class="chapter" data-level="2.3.3" data-path="intro.html"><a href="intro.html#liste"><i class="fa fa-check"></i><b>2.3.3</b> Liste</a></li>
+<li class="chapter" data-level="2.3.4" data-path="intro.html"><a href="intro.html#kod-ekleme-renklendirme"><i class="fa fa-check"></i><b>2.3.4</b> Kod Ekleme &amp; Renklendirme</a></li>
+<li class="chapter" data-level="2.3.5" data-path="intro.html"><a href="intro.html#tablo"><i class="fa fa-check"></i><b>2.3.5</b> Tablo</a></li>
+<li class="chapter" data-level="2.3.6" data-path="intro.html"><a href="intro.html#resim"><i class="fa fa-check"></i><b>2.3.6</b> Resim</a></li>
+<li class="chapter" data-level="2.3.7" data-path="intro.html"><a href="intro.html#daha-fazlas"><i class="fa fa-check"></i><b>2.3.7</b> Daha Fazlası</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#onizleme-ve-ckt-alma"><i class="fa fa-check"></i><b>2.4</b> Önizleme ve Çıktı Alma</a></li>
+<li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#onemli-nokta"><i class="fa fa-check"></i><b>2.5</b> Önemli Nokta!</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="shiny.html"><a href="shiny.html"><i class="fa fa-check"></i><b>3</b> Shiny</a><ul>
+<li class="chapter" data-level="3.1" data-path="shiny.html"><a href="shiny.html#gereklilikler-2"><i class="fa fa-check"></i><b>3.1</b> Gereklilikler</a></li>
+<li class="chapter" data-level="3.2" data-path="shiny.html"><a href="shiny.html#baslangc-1"><i class="fa fa-check"></i><b>3.2</b> Başlangıç</a></li>
+<li class="chapter" data-level="3.3" data-path="shiny.html"><a href="shiny.html#duzenleme-1"><i class="fa fa-check"></i><b>3.3</b> Düzenleme</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="shiny.html"><a href="shiny.html#ui"><i class="fa fa-check"></i><b>3.3.1</b> Ui</a></li>
+<li class="chapter" data-level="3.3.2" data-path="shiny.html"><a href="shiny.html#server"><i class="fa fa-check"></i><b>3.3.2</b> Server</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="shiny.html"><a href="shiny.html#yaynlama"><i class="fa fa-check"></i><b>3.4</b> Yayınlama</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="swirl.html"><a href="swirl.html"><i class="fa fa-check"></i><b>4</b> Swirl</a><ul>
+<li class="chapter" data-level="4.1" data-path="swirl.html"><a href="swirl.html#gereklilikler-3"><i class="fa fa-check"></i><b>4.1</b> Gereklilikler</a></li>
+<li class="chapter" data-level="4.2" data-path="swirl.html"><a href="swirl.html#baslangc-2"><i class="fa fa-check"></i><b>4.2</b> Başlangıç</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="swirl.html"><a href="swirl.html#dersi-ogrenmek-icin"><i class="fa fa-check"></i><b>4.2.1</b> Dersi Öğrenmek İçin</a></li>
+<li class="chapter" data-level="4.2.2" data-path="swirl.html"><a href="swirl.html#ders-olusturmak-icin"><i class="fa fa-check"></i><b>4.2.2</b> Ders Oluşturmak İçin</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="swirl.html"><a href="swirl.html#duzenleme-2"><i class="fa fa-check"></i><b>4.3</b> Düzenleme</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="swirl.html"><a href="swirl.html#dersi-ogrenmek-icin-1"><i class="fa fa-check"></i><b>4.3.1</b> Dersi Öğrenmek İçin</a></li>
+<li class="chapter" data-level="4.3.2" data-path="swirl.html"><a href="swirl.html#dersi-olusturmak-icin"><i class="fa fa-check"></i><b>4.3.2</b> Dersi Oluşturmak İçin</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="swirl.html"><a href="swirl.html#yaynlama-1"><i class="fa fa-check"></i><b>4.4</b> Yayınlama</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="rwebsite.html"><a href="rwebsite.html"><i class="fa fa-check"></i><b>5</b> RWebsite</a><ul>
+<li class="chapter" data-level="5.1" data-path="rwebsite.html"><a href="rwebsite.html#gereklilikler-4"><i class="fa fa-check"></i><b>5.1</b> Gereklilikler</a></li>
+<li class="chapter" data-level="5.2" data-path="rwebsite.html"><a href="rwebsite.html#baslangc-3"><i class="fa fa-check"></i><b>5.2</b> Başlangıç</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="rwebsite.html"><a href="rwebsite.html#website"><i class="fa fa-check"></i><b>5.2.1</b> Website</a></li>
+<li class="chapter" data-level="5.2.2" data-path="rwebsite.html"><a href="rwebsite.html#blog"><i class="fa fa-check"></i><b>5.2.2</b> Blog</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="rwebsite.html"><a href="rwebsite.html#duzenleme-3"><i class="fa fa-check"></i><b>5.3</b> Düzenleme</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="rwebsite.html"><a href="rwebsite.html#website-1"><i class="fa fa-check"></i><b>5.3.1</b> Website</a></li>
+<li class="chapter" data-level="5.3.2" data-path="rwebsite.html"><a href="rwebsite.html#blog-1"><i class="fa fa-check"></i><b>5.3.2</b> Blog</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="rwebsite.html"><a href="rwebsite.html#ckt"><i class="fa fa-check"></i><b>5.4</b> Çıktı</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="rwebsite.html"><a href="rwebsite.html#website-2"><i class="fa fa-check"></i><b>5.4.1</b> Website</a></li>
+<li class="chapter" data-level="5.4.2" data-path="rwebsite.html"><a href="rwebsite.html#blog-2"><i class="fa fa-check"></i><b>5.4.2</b> Blog</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R Freamworkleri</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="rwebsite" class="section level1">
+<h1><span class="header-section-number">5</span> RWebsite</h1>
+<p>R ile yapılan bir sürü uygulama arasında web sitesi yapımıda bunların arasında yerini almış olanlardan birisdir. Bu sayede kişisel, proje, paket ve blog sitenizi oluşturabilirsiniz.</p>
+<div id="gereklilikler-4" class="section level2">
+<h2><span class="header-section-number">5.1</span> Gereklilikler</h2>
+<p>Websitesi ve Blog sayfaları hazırlamanız için aşağıdaki paketlere ihtiyacınız vardır.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;rmarkdown&quot;</span>)
+<span class="kw">install.packages</span>(<span class="st">&quot;blogdown&quot;</span>)
+blogdown<span class="op">::</span><span class="kw">install_hugo</span>()</code></pre></div>
+</div>
+<div id="baslangc-3" class="section level2">
+<h2><span class="header-section-number">5.2</span> Başlangıç</h2>
+<p>Blog ve websitesi için giriş aşamasında neler yapılması gerektiğini inceleyeceğiz.</p>
+<div id="website" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> Website</h3>
+<p>Başlangıç olarak iki sayfadan oluşan basit bir site oluşturalım. İlk olarak bir ayar dosyası oluşturmamız gerekiyor. Bu dosyanın adı **/_site.yml** olmalıdır. Bu dosya içerisinde sayfaların yolları ve site adı gibi bazı bilgiler yer alacaktır.</p>
+<p>**_site.yml**</p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">name: &quot;r-freamworkleri&quot;
+navbar:
+  title: &quot;R Freamworkleri&quot;
+  left:
+<span class="bn">    - text: &quot;Ana Sayfa&quot;</span>
+<span class="bn">      href: index.html</span>
+<span class="bn">    - text: &quot;Hakkında&quot;</span>
+<span class="bn">      href: about.html</span></code></pre></div>
+<p><strong>index.Rmd</strong></p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">---
+title: &quot;My Website&quot;
+---
+
+Hello, Website!</code></pre></div>
+<p><strong>about.Rmd</strong></p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">---
+title: &quot;About This Website&quot;
+---
+
+More about this website.</code></pre></div>
+<p>benzeri bir yapıya sahip olmaları gerekiyor.</p>
+</div>
+<div id="blog" class="section level3">
+<h3><span class="header-section-number">5.2.2</span> Blog</h3>
+<p>Başlangıç olarak basit bir blog sitesi oluşturalım.</p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">blogdown::new_site()</code></pre></div>
+<p>bu komut ile örnek template ile yeni bir blog sayfası oluşturulur. İlk olarak bu oluşan sayfanın bir canlı önizlemesini alalım.</p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">blogdown::serve_site()</code></pre></div>
+<p>Şimdi oluşturduğumuz sitenin alt dosyalarını inceleyelim. <strong>config.toml</strong> Bu dosya içerisinde temel ayarları belirleyeceğiz. Site başlığı, dili, teması, diğer sayfalar ile olan bağlantısı gibi. config.toml dosyası aşağıdaki gibi olmalıdır.</p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">baseurl = &quot;/&quot;
+languageCode = &quot;en-us&quot;
+title = &quot;A Hugo website&quot;
+theme = &quot;hugo-lithium&quot;
+
+[[menu.main]]
+<span class="bn">    name = &quot;About&quot;</span>
+<span class="bn">    url = &quot;/about/&quot;</span>
+[[menu.main]]
+<span class="bn">    name = &quot;GitHub&quot;</span>
+<span class="bn">    url = &quot;https://github.com/rstudio/blogdown&quot;</span>
+[[menu.main]]
+<span class="bn">    name = &quot;Twitter&quot;</span>
+<span class="bn">    url = &quot;https://twitter.com/rstudio&quot;</span></code></pre></div>
+<p>Blog sayfanız için yeni temalara <a href="http://themes.gohugo.io/">buradan</a> ulaşabilirsiniz. Yeni temanızı aşağıdaki şekilde kurabilirsiniz.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">blogdown<span class="op">::</span><span class="kw">new_site</span>(<span class="dt">theme =</span> <span class="st">&quot;gcushen/hugo-academic&quot;</span>)</code></pre></div>
+</div>
+</div>
+<div id="duzenleme-3" class="section level2">
+<h2><span class="header-section-number">5.3</span> Düzenleme</h2>
+<div id="website-1" class="section level3">
+<h3><span class="header-section-number">5.3.1</span> Website</h3>
+<p>Bir web sitesi içerisinde eklemeniz gereken çeşitli öğeler(Css, üstbilgi, altbilgi) vardır.</p>
+<p>**_site.yml**</p>
+<div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">name: &quot;r-freamworkleri&quot;
+navbar:
+  title: &quot;R Freamworkleri&quot;
+  left:
+<span class="bn">    - text: &quot;Ana Sayfa&quot;</span>
+<span class="bn">      href: index.html</span>
+<span class="bn">    - text: &quot;Hakkında&quot;</span>
+<span class="bn">      href: about.html</span>
+output:
+  html_document:
+<span class="bn">    theme: cosmo</span>
+<span class="bn">    highlight: textmate</span>
+<span class="bn">    include:</span>
+<span class="bn">      after_body: footer.html</span>
+<span class="bn">    css: styles.css</span></code></pre></div>
+<p><strong>footer.html</strong></p>
+<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;p&gt;</span>Copyright <span class="dv">&amp;copy;</span> 2018 RFreamworkleri. Tüm Hakları Saklıdır.<span class="kw">&lt;/p&gt;</span></code></pre></div>
+<p><strong>style.css</strong></p>
+<div class="sourceCode"><pre class="sourceCode css"><code class="sourceCode css">blockquote <span class="kw">{</span>
+  <span class="kw">font-style:</span> <span class="dt">italic</span>
+<span class="kw">}</span></code></pre></div>
+<style type="text/css">
+blockquote {
+  font-style: italic
+}
+</style>
+<p>render sırasında ortak öğeler ile sayfaların tek tek birleştirilerek istenilen şekilde bir site oluşturulmasını sağlamaktadır.</p>
+</div>
+<div id="blog-1" class="section level3">
+<h3><span class="header-section-number">5.3.2</span> Blog</h3>
+<div id="yeni-post" class="section level4">
+<h4><span class="header-section-number">5.3.2.1</span> Yeni Post</h4>
+<p>Her blog sitesinde olduğu gibi düzenli post atmanız gerektiği için yeniden sayfalarla uğraşmak yerine aşağıdaki komutu kullanarak tema dosyanıza uygun olarak yeni bir post sayfası oluşturabilirsiniz.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">blogdown<span class="op">::</span><span class="kw">new_post</span>()</code></pre></div>
+</div>
+<div id="sayfa-duzenlemeleri" class="section level4">
+<h4><span class="header-section-number">5.3.2.2</span> Sayfa Düzenlemeleri</h4>
+<p>Sayfa düzenlemeleri web sitesinin yapımı ile benzerlik göstermektedir.</p>
+</div>
+</div>
+</div>
+<div id="ckt" class="section level2">
+<h2><span class="header-section-number">5.4</span> Çıktı</h2>
+<div id="website-2" class="section level3">
+<h3><span class="header-section-number">5.4.1</span> Website</h3>
+<p>Her önizleme aldığınızda siteniz _site içerisinde hazır hale gelir. Bu aşamadan sonra yapmanız gereken çıktıları alıp sunucunuza eklemek olacaktır.</p>
+</div>
+<div id="blog-2" class="section level3">
+<h3><span class="header-section-number">5.4.2</span> Blog</h3>
+<p>Blog yayınlamada ise birkaç alanda depolanabileceği için çeşitlilikler göstermektedir. Ücretsiz ve stabil olmasından dolayı github üzerinden yayınlama işlemlerine göz atalım. Bu noktada, &lt;username.github.io&gt; deponuza sahip olduğunuz veya yeni oluşturduğunuz ya da yerel makinenize klonladınız. Ayrıca, Hugo’yu sitenizin config.toml dosyasındaki publishDir = “&lt;username.github.io” seçeneğini kullanarak sitenizi aynı depoya yayınlamasını istediniz. Sadece birkaç adım kaldı!</p>
+<pre><code>Hugo’yu sitenize build_site () ile (argümanlar gerekmez) yapmasını söyleyin. Hugo sitenizi oluşturmayı tamamladıktan sonra, &lt;username&gt; .gihub.io dizininize bir göz atın, şimdi kaynak içerik deponuzun public / dizini ile aynı dosyaları içermelidir.
+
+Terminali açın, &lt;kullaniciadi.github.io repo&gt; &#39;yı kullanarak &lt;username&gt; .gihub.io dizinine gidin. Tüm değiştirilen dosyaları hazırlayın, değişikliklerinizi yapın ve yeni sitenizi GitHub&#39;a aktarın.</code></pre>
+<p>Bu kadar! <a href="https://kullanıcıadı.github.io" class="uri">https://kullanıcıadı.github.io</a> adresindeki yeni web sitenize gidin ve neler yaptığınıza bir bakın!</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="swirl.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/04-application.Rmd",
+"text": "Edit"
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

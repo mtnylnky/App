@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>R Freamworkleri</title>
+  <meta name="description" content="Bu materyal R ile ilgili olan freamworklerin nasıl çalıştığına dair yetersiz Türkçe kaynaklara çözüm olması için konuların genel ve temel olarak aktarılmaya çalışılmıştır.">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="R Freamworkleri" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Bu materyal R ile ilgili olan freamworklerin nasıl çalıştığına dair yetersiz Türkçe kaynaklara çözüm olması için konuların genel ve temel olarak aktarılmaya çalışılmıştır." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="R Freamworkleri" />
+  
+  <meta name="twitter:description" content="Bu materyal R ile ilgili olan freamworklerin nasıl çalıştığına dair yetersiz Türkçe kaynaklara çözüm olması için konuların genel ve temel olarak aktarılmaya çalışılmıştır." />
+  
+
+<meta name="author" content="Metin YALÇINKAYA">
+
+
+<meta name="date" content="2018-01-01">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="shiny.html">
+<link rel="next" href="rwebsite.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R Freamworkleri</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Giriş</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#tantm"><i class="fa fa-check"></i><b>1.1</b> Tanıtım</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#gereklilikler"><i class="fa fa-check"></i><b>1.2</b> Gereklilikler</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Bookdown</a><ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#gereklilikler-1"><i class="fa fa-check"></i><b>2.1</b> Gereklilikler</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#baslangc"><i class="fa fa-check"></i><b>2.2</b> Başlangıç</a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#duzenleme"><i class="fa fa-check"></i><b>2.3</b> Düzenleme</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="intro.html"><a href="intro.html#baslk"><i class="fa fa-check"></i><b>2.3.1</b> Başlık</a></li>
+<li class="chapter" data-level="2.3.2" data-path="intro.html"><a href="intro.html#link"><i class="fa fa-check"></i><b>2.3.2</b> Link</a></li>
+<li class="chapter" data-level="2.3.3" data-path="intro.html"><a href="intro.html#liste"><i class="fa fa-check"></i><b>2.3.3</b> Liste</a></li>
+<li class="chapter" data-level="2.3.4" data-path="intro.html"><a href="intro.html#kod-ekleme-renklendirme"><i class="fa fa-check"></i><b>2.3.4</b> Kod Ekleme &amp; Renklendirme</a></li>
+<li class="chapter" data-level="2.3.5" data-path="intro.html"><a href="intro.html#tablo"><i class="fa fa-check"></i><b>2.3.5</b> Tablo</a></li>
+<li class="chapter" data-level="2.3.6" data-path="intro.html"><a href="intro.html#resim"><i class="fa fa-check"></i><b>2.3.6</b> Resim</a></li>
+<li class="chapter" data-level="2.3.7" data-path="intro.html"><a href="intro.html#daha-fazlas"><i class="fa fa-check"></i><b>2.3.7</b> Daha Fazlası</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#onizleme-ve-ckt-alma"><i class="fa fa-check"></i><b>2.4</b> Önizleme ve Çıktı Alma</a></li>
+<li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#onemli-nokta"><i class="fa fa-check"></i><b>2.5</b> Önemli Nokta!</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="shiny.html"><a href="shiny.html"><i class="fa fa-check"></i><b>3</b> Shiny</a><ul>
+<li class="chapter" data-level="3.1" data-path="shiny.html"><a href="shiny.html#gereklilikler-2"><i class="fa fa-check"></i><b>3.1</b> Gereklilikler</a></li>
+<li class="chapter" data-level="3.2" data-path="shiny.html"><a href="shiny.html#baslangc-1"><i class="fa fa-check"></i><b>3.2</b> Başlangıç</a></li>
+<li class="chapter" data-level="3.3" data-path="shiny.html"><a href="shiny.html#duzenleme-1"><i class="fa fa-check"></i><b>3.3</b> Düzenleme</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="shiny.html"><a href="shiny.html#ui"><i class="fa fa-check"></i><b>3.3.1</b> Ui</a></li>
+<li class="chapter" data-level="3.3.2" data-path="shiny.html"><a href="shiny.html#server"><i class="fa fa-check"></i><b>3.3.2</b> Server</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="shiny.html"><a href="shiny.html#yaynlama"><i class="fa fa-check"></i><b>3.4</b> Yayınlama</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="swirl.html"><a href="swirl.html"><i class="fa fa-check"></i><b>4</b> Swirl</a><ul>
+<li class="chapter" data-level="4.1" data-path="swirl.html"><a href="swirl.html#gereklilikler-3"><i class="fa fa-check"></i><b>4.1</b> Gereklilikler</a></li>
+<li class="chapter" data-level="4.2" data-path="swirl.html"><a href="swirl.html#baslangc-2"><i class="fa fa-check"></i><b>4.2</b> Başlangıç</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="swirl.html"><a href="swirl.html#dersi-ogrenmek-icin"><i class="fa fa-check"></i><b>4.2.1</b> Dersi Öğrenmek İçin</a></li>
+<li class="chapter" data-level="4.2.2" data-path="swirl.html"><a href="swirl.html#ders-olusturmak-icin"><i class="fa fa-check"></i><b>4.2.2</b> Ders Oluşturmak İçin</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="swirl.html"><a href="swirl.html#duzenleme-2"><i class="fa fa-check"></i><b>4.3</b> Düzenleme</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="swirl.html"><a href="swirl.html#dersi-ogrenmek-icin-1"><i class="fa fa-check"></i><b>4.3.1</b> Dersi Öğrenmek İçin</a></li>
+<li class="chapter" data-level="4.3.2" data-path="swirl.html"><a href="swirl.html#dersi-olusturmak-icin"><i class="fa fa-check"></i><b>4.3.2</b> Dersi Oluşturmak İçin</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="swirl.html"><a href="swirl.html#yaynlama-1"><i class="fa fa-check"></i><b>4.4</b> Yayınlama</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="rwebsite.html"><a href="rwebsite.html"><i class="fa fa-check"></i><b>5</b> RWebsite</a><ul>
+<li class="chapter" data-level="5.1" data-path="rwebsite.html"><a href="rwebsite.html#gereklilikler-4"><i class="fa fa-check"></i><b>5.1</b> Gereklilikler</a></li>
+<li class="chapter" data-level="5.2" data-path="rwebsite.html"><a href="rwebsite.html#baslangc-3"><i class="fa fa-check"></i><b>5.2</b> Başlangıç</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="rwebsite.html"><a href="rwebsite.html#website"><i class="fa fa-check"></i><b>5.2.1</b> Website</a></li>
+<li class="chapter" data-level="5.2.2" data-path="rwebsite.html"><a href="rwebsite.html#blog"><i class="fa fa-check"></i><b>5.2.2</b> Blog</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="rwebsite.html"><a href="rwebsite.html#duzenleme-3"><i class="fa fa-check"></i><b>5.3</b> Düzenleme</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="rwebsite.html"><a href="rwebsite.html#website-1"><i class="fa fa-check"></i><b>5.3.1</b> Website</a></li>
+<li class="chapter" data-level="5.3.2" data-path="rwebsite.html"><a href="rwebsite.html#blog-1"><i class="fa fa-check"></i><b>5.3.2</b> Blog</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="rwebsite.html"><a href="rwebsite.html#ckt"><i class="fa fa-check"></i><b>5.4</b> Çıktı</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="rwebsite.html"><a href="rwebsite.html#website-2"><i class="fa fa-check"></i><b>5.4.1</b> Website</a></li>
+<li class="chapter" data-level="5.4.2" data-path="rwebsite.html"><a href="rwebsite.html#blog-2"><i class="fa fa-check"></i><b>5.4.2</b> Blog</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R Freamworkleri</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="swirl" class="section level1">
+<h1><span class="header-section-number">4</span> Swirl</h1>
+<p>Swirl diğerlerinden farklı olarak isterseniz R derslerini öğrenebileceğiniz isterseniz ders olşturup insanların bu dersler sayesinde R konularını öğrenmelerini sağlayabileceğiniz freamworktür.</p>
+<div id="gereklilikler-3" class="section level2">
+<h2><span class="header-section-number">4.1</span> Gereklilikler</h2>
+<p>RStudio’yu açıp konsol kısmına aşağıdaki komutu yapıştırarak gerekli paketlerin kurulmasını sağlayabilirsiniz;</p>
+<p>Dersi öğrenmek için;</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;swirl&quot;</span>)</code></pre></div>
+<p>Ders oluşturmak için;</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="kw">c</span>(<span class="st">&quot;swirl&quot;</span>, <span class="st">&quot;swirlify&quot;</span>))</code></pre></div>
+</div>
+<div id="baslangc-2" class="section level2">
+<h2><span class="header-section-number">4.2</span> Başlangıç</h2>
+<div id="dersi-ogrenmek-icin" class="section level3">
+<h3><span class="header-section-number">4.2.1</span> Dersi Öğrenmek İçin</h3>
+<p>Ders öğrenmek için;</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(swirl)</code></pre></div>
+<p>kütüphanesini etkinleştirdikten sonra</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">swirl</span>()</code></pre></div>
+<p>kodunu çalıştırarak dersi aktifleştirelim ve içersindeki dersi öğrenmeye başlayalım. <img src="resim10.png" /></p>
+</div>
+<div id="ders-olusturmak-icin" class="section level3">
+<h3><span class="header-section-number">4.2.2</span> Ders Oluşturmak İçin</h3>
+<p>Gerekli paketleri indirdik ve şimdi ders oluşturmamız gerekiyor. İlk olarak “swirlify” kütüphanesini aktif hale getirmemiz gerekiyor.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(swirlify)</code></pre></div>
+<p>Kütüphane aktifleştirmede bir sıkıntı yoksa sırada dersimizi oluşturmaya geldi. “new_lesson()” komutu ile yeni ve ham bir ders oluşturabiliriz.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">new_lesson</span>(<span class="st">&quot;KursunAdi&quot;</span>, <span class="st">&quot;DersinAdi&quot;</span>)</code></pre></div>
+<p>şeklinde dersimizi oluşturabiliriz. Bu komutu aktifleştirdikten sonra aşağıdaki gibi bir dosya sistemine sahip olacağız.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">─ DersinAdi
+  └─ KursunAdi
+     ├─ lesson.yaml
+     ├─ initLesson.R
+     ├─ dependson.txt
+     └─ customTests.R</code></pre></div>
+<p>Peki bu dosyalar içerisinde neler yer alıyor.<br />
+<strong>lesson.yaml:</strong> Soruların yazıldığı alan burasıdır. Sorular yazılır eğer tanımlı ise bir fonksiyona yönlendirilir veya kendi içerisinde basit bir şekilde değerlendirilir.<br />
+<strong>initLesson.R:</strong> Genellikle veri yüklemek veya çevresel değişkenler oluşturmak için kullanılan ders başlamadan önce çalışan bir R betiğidir.<br />
+<strong>depenson.txt:</strong> Bir veriyi tanıtmak için kullanılan R betiğidir.<br />
+<strong>customTests.R:</strong> Öğrencilerin cevapları için kendi testlerinizi yazabileceğiniz yerdir.</p>
+</div>
+</div>
+<div id="duzenleme-2" class="section level2">
+<h2><span class="header-section-number">4.3</span> Düzenleme</h2>
+<div id="dersi-ogrenmek-icin-1" class="section level3">
+<h3><span class="header-section-number">4.3.1</span> Dersi Öğrenmek İçin</h3>
+<p>Gelen paket içerisindeki dersler yetersiz geldiğinde aşağıdaki kodu kullanark yeni ders ekleyebilirsiniz.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(swirl)
+<span class="kw">install_course</span>(<span class="st">&quot;Kurs_adi&quot;</span>)
+<span class="kw">swirl</span>()</code></pre></div>
+<p>Eğer dersi indirdiyseniz;</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(swirl)
+<span class="kw">install_course_zip</span>(<span class="st">&quot;path/to/file/here/dosya_adi.zip&quot;</span>, <span class="dt">multi=</span><span class="ot">TRUE</span>, 
+                   <span class="dt">which_course=</span><span class="st">&quot;Kurs_adi&quot;</span>)
+<span class="kw">swirl</span>()</code></pre></div>
+<p>ve dersi kaldırmak için;</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">uninstall_course</span>(<span class="st">&quot;Kurs_adi&quot;</span>)</code></pre></div>
+</div>
+<div id="dersi-olusturmak-icin" class="section level3">
+<h3><span class="header-section-number">4.3.2</span> Dersi Oluşturmak İçin</h3>
+<div id="lesson.yaml" class="section level4">
+<h4><span class="header-section-number">4.3.2.1</span> Lesson.yaml</h4>
+<p>Yukarıda bahsedildiği gibi soruların ve cevapların yer aldığı bölüm aşağıdaki şekilde düzenlenir.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">-</span><span class="st"> </span>Class<span class="op">:</span><span class="st"> </span>cmd_question
+  Output<span class="op">:</span><span class="st"> </span>R konsolu içerisinde <span class="dv">2</span> ve <span class="dv">2</span> sayılarını toplayınız.
+  CorrectAnswer<span class="op">:</span><span class="st"> </span><span class="dv">2</span> <span class="op">+</span><span class="st"> </span><span class="dv">2</span>
+  AnswerTests<span class="op">:</span><span class="st"> </span><span class="kw">omnitest</span>(<span class="dt">correctExpr=</span><span class="st">&#39;2 + 2&#39;</span>)
+  Hint<span class="op">:</span><span class="st"> </span>Just type <span class="dv">2</span> <span class="op">+</span><span class="st"> </span><span class="dv">2</span>.</code></pre></div>
+</div>
+<div id="depenson.txt" class="section level4">
+<h4><span class="header-section-number">4.3.2.2</span> depenson.txt</h4>
+<p>Bu alanda düz metin olarak fonksiyonlar hakkında bilgi verebilirsiniz.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Bu fonksiyon ..... işlemlerini gerçekleştirmektedir.</code></pre></div>
+</div>
+<div id="initlesson.r" class="section level4">
+<h4><span class="header-section-number">4.3.2.3</span> initLesson.R</h4>
+<p>Bir R betiğinde olduğu gibi değişkenlerinizi ve verilerinizi ekledeğiniz bölümün örneği aşağıdaki gibidir;</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(dplyr)
+
+<span class="co"># Sayı aralığı</span>
+.ng &lt;-<span class="st"> </span><span class="dv">5</span>
+<span class="co">#Öğrenciler/Gruplar için maksimum değer</span>
+.gmax &lt;-<span class="st"> </span><span class="dv">8</span>
+
+<span class="co"># Kolon başlıkları değerlerdir, değer isimleri değil</span>
+
+<span class="kw">set.seed</span>(<span class="dv">1234</span>)
+students &lt;-<span class="st"> </span><span class="kw">data.frame</span>(
+  <span class="dt">grade =</span> LETTERS[<span class="dv">1</span><span class="op">:</span>.ng],
+  <span class="dt">male =</span> <span class="kw">sample</span>(<span class="dv">0</span><span class="op">:</span>.gmax, .ng, <span class="dt">replace =</span> <span class="ot">TRUE</span>),
+  <span class="dt">female =</span> <span class="kw">sample</span>(<span class="dv">0</span><span class="op">:</span>.gmax, .ng, <span class="dt">replace =</span> <span class="ot">TRUE</span>)
+)</code></pre></div>
+</div>
+<div id="customtests.r" class="section level4">
+<h4><span class="header-section-number">4.3.2.4</span> customTests.R</h4>
+<p>Kendi fonksiyonalrınızı oluşturacağınız bu bölümde topladığınız verileri işlemler ile beraber çalıştırarak aldığınız sonuçları kullanıcıya döndüreceğiniz dosyadır. Örne olarak;</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Bir kullanıcının komuta göre doğrudan girdiği veya hesaplandığı veriyi alın</span>
+getVal &lt;-<span class="st"> </span><span class="cf">function</span>(){
+  <span class="kw">getState</span>()<span class="op">$</span>val
+}</code></pre></div>
+</div>
+</div>
+</div>
+<div id="yaynlama-1" class="section level2">
+<h2><span class="header-section-number">4.4</span> Yayınlama</h2>
+<p>Kendi dersinizi oluşturdunuz ve artık bunu öğrenmek isteyenlere sunmak istiyorsunuz o halde dersi bir dosya halinde nasıl çıktı alacağımıza bir bakalım;</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set_lesson</span>()</code></pre></div>
+<p>bu komut ile dersinizi ayarlamanız gerekiyor daha sonra</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pack_course</span>()</code></pre></div>
+<p>komutu ile <strong>.swc</strong> uzantılı bir dosya oluşturduk. Bu dosyayı normal bir dosya gibi paylaşabilirsiniz ve ihtiyacınız olduğunda <strong>install_course()</strong> komutu ile dersi çalıştırabilirsiniz.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="shiny.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="rwebsite.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/03-method.Rmd",
+"text": "Edit"
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
