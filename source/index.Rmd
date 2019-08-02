@@ -1,0 +1,24 @@
+--- 
+title: "R Freamworkleri"
+author: "Metin YALÇINKAYA"
+date: "`r format(Sys.time(), '%Y')`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+description: "Bu materyal R ile ilgili olan freamworklerin nasıl çalıştığına dair yetersiz Türkçe kaynaklara çözüm olması için konuların genel ve temel olarak aktarılmaya çalışılmıştır."
+---
+#Giriş
+![](resim0.png)
+
+## Tanıtım
+
+Bu materyal R programlama dili ile ilgili freamworkler ile ilgili yeterince Türkçe kaynak olmamasından ve bu konu ile ilgili olan araştırmacılar için oluşturulmuştur.
+Bu materyalde freamworklerin hakkında ayrıca nasıl oluşturacağınıza dair bir bazı bilgiler yer almaktadır.
+
+##Gereklilikler
+Bu materyalde yer alan uygulamları gerçekleştirebilmek için RStudio kullanmış ve bir miktar programlama dersi görmüş olmanız yeterlidir.  
+Ayrıca bilgisayarınızda [R](https://www.r-project.org/) ve [RStudio](https://www.rstudio.com/) kurulu olmalıdır.

@@ -1,0 +1,144 @@
+# RWebsite
+R ile yapılan bir sürü uygulama arasında web sitesi yapımıda bunların arasında yerini almış olanlardan birisdir. Bu sayede kişisel, proje, paket ve blog sitenizi oluşturabilirsiniz.
+
+##Gereklilikler
+Websitesi ve Blog sayfaları hazırlamanız için aşağıdaki paketlere ihtiyacınız vardır.
+```{r eval=FALSE}
+install.packages("rmarkdown")
+install.packages("blogdown")
+blogdown::install_hugo()
+```
+##Başlangıç
+Blog ve websitesi için giriş aşamasında neler yapılması gerektiğini inceleyeceğiz.
+
+###Website
+Başlangıç olarak iki sayfadan oluşan basit bir site oluşturalım. İlk olarak bir ayar dosyası oluşturmamız gerekiyor. Bu dosyanın adı **/_site.yml** olmalıdır. Bu dosya içerisinde sayfaların yolları ve site adı gibi bazı bilgiler yer alacaktır.
+
+**_site.yml**
+```{markdown}
+name: "r-freamworkleri"
+navbar:
+  title: "R Freamworkleri"
+  left:
+    - text: "Ana Sayfa"
+      href: index.html
+    - text: "Hakkında"
+      href: about.html
+```
+
+
+**index.Rmd**
+```{markdown}
+---
+title: "My Website"
+---
+
+Hello, Website!
+```
+
+**about.Rmd**
+```{markdown}
+---
+title: "About This Website"
+---
+
+More about this website.
+```
+
+benzeri bir yapıya sahip olmaları gerekiyor.
+
+###Blog
+Başlangıç olarak basit bir blog sitesi oluşturalım.
+
+```{markdown}
+blogdown::new_site()
+```
+bu komut ile örnek template ile yeni bir blog sayfası oluşturulur. İlk olarak bu oluşan sayfanın bir canlı önizlemesini alalım.
+```{markdown}
+blogdown::serve_site()
+```
+
+Şimdi oluşturduğumuz sitenin alt dosyalarını inceleyelim.
+**config.toml**
+Bu dosya içerisinde temel ayarları belirleyeceğiz. Site başlığı, dili, teması, diğer sayfalar ile olan bağlantısı gibi. config.toml dosyası aşağıdaki gibi olmalıdır.
+```{markdown}
+baseurl = "/"
+languageCode = "en-us"
+title = "A Hugo website"
+theme = "hugo-lithium"
+
+[[menu.main]]
+    name = "About"
+    url = "/about/"
+[[menu.main]]
+    name = "GitHub"
+    url = "https://github.com/rstudio/blogdown"
+[[menu.main]]
+    name = "Twitter"
+    url = "https://twitter.com/rstudio"
+```
+Blog sayfanız için yeni temalara [buradan](http://themes.gohugo.io/) ulaşabilirsiniz. Yeni temanızı aşağıdaki şekilde kurabilirsiniz.
+```{r eval=FALSE}
+blogdown::new_site(theme = "gcushen/hugo-academic")
+```
+
+##Düzenleme
+###Website
+Bir web sitesi içerisinde eklemeniz gereken çeşitli öğeler(Css, üstbilgi, altbilgi) vardır.
+
+**_site.yml**
+```{markdown}
+name: "r-freamworkleri"
+navbar:
+  title: "R Freamworkleri"
+  left:
+    - text: "Ana Sayfa"
+      href: index.html
+    - text: "Hakkında"
+      href: about.html
+output:
+  html_document:
+    theme: cosmo
+    highlight: textmate
+    include:
+      after_body: footer.html
+    css: styles.css
+```
+
+**footer.html**
+```{html}
+<p>Copyright &copy; 2018 RFreamworkleri. Tüm Hakları Saklıdır.</p>
+```
+
+**style.css**
+```{css}
+blockquote {
+  font-style: italic
+}
+```
+
+render sırasında ortak öğeler ile sayfaların tek tek birleştirilerek istenilen şekilde bir site oluşturulmasını sağlamaktadır.
+
+###Blog
+####Yeni Post
+Her blog sitesinde olduğu gibi düzenli post atmanız gerektiği için yeniden sayfalarla uğraşmak yerine aşağıdaki komutu kullanarak tema dosyanıza uygun olarak yeni bir post sayfası oluşturabilirsiniz.
+```{r eval=FALSE}
+blogdown::new_post()
+```
+
+####Sayfa Düzenlemeleri
+Sayfa düzenlemeleri web sitesinin yapımı ile benzerlik göstermektedir.
+
+##Çıktı
+###Website
+Her önizleme aldığınızda siteniz _site içerisinde hazır hale gelir. Bu aşamadan sonra yapmanız gereken çıktıları alıp sunucunuza eklemek olacaktır.
+
+###Blog
+Blog yayınlamada ise birkaç alanda depolanabileceği için çeşitlilikler göstermektedir. Ücretsiz ve stabil olmasından dolayı github üzerinden yayınlama işlemlerine göz atalım.
+Bu noktada, <username.github.io> deponuza sahip olduğunuz veya yeni oluşturduğunuz ya da yerel makinenize klonladınız. Ayrıca, Hugo’yu sitenizin config.toml dosyasındaki publishDir = "<username.github.io" seçeneğini kullanarak sitenizi aynı depoya yayınlamasını istediniz. Sadece birkaç adım kaldı!
+
+    Hugo’yu sitenize build_site () ile (argümanlar gerekmez) yapmasını söyleyin. Hugo sitenizi oluşturmayı tamamladıktan sonra, <username> .gihub.io dizininize bir göz atın, şimdi kaynak içerik deponuzun public / dizini ile aynı dosyaları içermelidir.
+
+    Terminali açın, <kullaniciadi.github.io repo> 'yı kullanarak <username> .gihub.io dizinine gidin. Tüm değiştirilen dosyaları hazırlayın, değişikliklerinizi yapın ve yeni sitenizi GitHub'a aktarın.
+
+Bu kadar! https://kullanıcıadı.github.io adresindeki yeni web sitenize gidin ve neler yaptığınıza bir bakın!
